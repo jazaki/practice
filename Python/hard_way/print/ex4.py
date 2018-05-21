@@ -8,4 +8,12 @@ Ohh I SEE....
 This way is easier to print multiple lines 
 """)
 
-print "Heyyy"
+print('I am 6\'2 tall')
+
+print('Junaid \a Zaki')
+
+print('''
+Junaid Arham Zaki
+Junaid's
+Triple Single Quotes
+''')
