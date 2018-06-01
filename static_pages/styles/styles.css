@@ -32,6 +32,22 @@ h1, h2, h3, h4, h5, h6, h7{
 .nav-link:hover{
     color: #000;
 }
+
+.active-nav{
+    text-decoration: none;
+    position: relative;
+}
+
+.active-nav:after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    border-width: 0 0 2px;
+    border-style: solid;
+}
+
 .content{
     background: #f7f7f7;
 }
