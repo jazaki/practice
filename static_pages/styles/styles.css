@@ -347,3 +347,60 @@ h1, h2, h3, h4, h5, h6, h7{
         font-size: 10px;
     }
 }
+
+
+            
+/* BREAKING TRAIDITIONS  */
+
+    .container{
+        padding-bottom: 7em;
+    }
+    .cat-quote{
+        color: #13121270;
+        font-weight: 600;
+    }
+    .card-img-overlay{
+        position: absolute;
+        bottom: 10%;
+        top: auto;
+        right: auto;
+        background: #fff;
+        width: 75%;
+        left: 12%;
+        text-align: center;
+        padding: unset;
+    }                                           
+
+    .card-cat{
+        background-size: cover !important;
+        height: 100%; 
+        border: none;
+    }
+
+    /* Media Queries */
+
+
+/* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+    }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+    @media only screen and (min-width: 992px) {
+        .container{
+            padding-top: 4em;
+            padding-left: 4em;
+            padding-right: 4em;
+        }
+
+        .top-row{
+            margin-top: 4em;
+        }
+        .bg-card-container{
+             padding-top: 0;
+            padding-bottom: 1.44em;
+        }
+    }
