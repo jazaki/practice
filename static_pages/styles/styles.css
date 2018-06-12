@@ -421,3 +421,49 @@ h1, h2, h3, h4, h5, h6, h7{
             padding-bottom: 1.44em;
         }
     }
+
+/* Single Post CSS */
+
+.single-content{
+    padding-left: 12em; 
+    padding-right: 12em
+}
+
+.single-content h5{
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.single-post-footer{
+    margin-top: 2em;
+    padding-bottom: 5em;
+    border-bottom: 2px solid #9e9595;
+}
+
+.single-post-meta{
+    padding-top: 3em
+}
+
+.single-post-meta h6{
+    font-size: 1.3em
+}
+
+.single-post-meta p{
+    padding-right: 2em;
+}
+
+.single-post-nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 6em;
+    box-shadow: 1px 1px 16px 1px #cccccc8a;
+}
+
+.single-related{
+    padding: 30px 9em 30px 9em;
+    background: #f7f7f7;
+}
+
+.single-related h4{
+    margin-bottom: 2em;
+}
