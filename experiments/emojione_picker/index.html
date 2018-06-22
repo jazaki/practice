@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emoji One Picker</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./node_modules/emojionearea/dist/emojionearea.js"></script>
+    <link rel="stylesheet" href="./node_modules/emojionearea/dist/emojionearea.css">
+</head>
+<body>
+    <div contenteditable="true" id="text-1"></div>
+</body>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#text-1").emojioneArea({
+        standalone: true,
+        pickerPosition: "bottom",
+        saveEmojisAs: 'unicode'
+    });
+  });
+</script>
+</html>
