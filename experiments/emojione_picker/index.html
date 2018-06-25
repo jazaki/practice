@@ -23,21 +23,44 @@
     </style>
 </head>
 <body>
-    <div contenteditable="true" id="text-1">
-         &nbsp;<span spellcheck="false" readonly contenteditable="false" class="text-elem">Hello Junaid</span>&nbsp; &nbsp;<span readonly contenteditable="false" class="text-elem">Howdy!!</span>&nbsp;
+    <div class="bada-baap">
+        <div class="baap-div">
+            <div contenteditable="true" class="text-1">
+                &nbsp;<span spellcheck="false" readonly contenteditable="false" class="text-elem">Hello Junaid</span>&nbsp; &nbsp;<span readonly contenteditable="false" class="text-elem">Howdy!!</span>&nbsp;<span readonly contenteditable="false" class="text-elem">Howdy!!</span>&nbsp;
+            </div>
+            <div contenteditable="true" class="text-1">
+                &nbsp;<span spellcheck="false" readonly contenteditable="false" class="text-elem">Hello Junaid</span>&nbsp; &nbsp;<span readonly contenteditable="false" class="text-elem">Howdy!!</span>&nbsp;
+            </div>
+        </div>
     </div>
 </body>
 <script type="text/javascript">
   $(document).ready(function() {
-    $("#text-1").emojioneArea({
-        standalone: false,
-        pickerPosition: "bottom",
-        saveEmojisAs: 'unicode',
-        container: '#text-1'
+    // $("#text-1").emojioneArea({
+    //     standalone: false,
+    //     pickerPosition: "bottom",
+    //     saveEmojisAs: 'unicode',
+    //     container: '#text-1'
+    // });
+    // $(".text-1").on("click", ".text-elem", function () {
+    //     let index = $(this).index();
+    //     console.log($('.text-elem').eq(index))
+    //   });
+    
+
+    $(".text-elem").on("click", function () {
+        let inner = $(this).index();
+        console.log(inner);
+        let outer = $(this).parents(".text-1").index();
+        console.log(outer);
+        let out_elem = $(".bada-baap .text-1");
+        let in_elem = $(out_elem[outer]).find(".text-elem")
+        
+        let th = in_elem[inner];
+
+        // console.log(outer, inner);
+        console.log(th);
     });
-    $(".text-1").on("click", ".text-elem", function () {
-          console.log($(this).index());
-      });
   });
 </script>
 </html>
