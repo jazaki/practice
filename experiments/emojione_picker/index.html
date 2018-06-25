@@ -8,17 +8,36 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="./node_modules/emojionearea/dist/emojionearea.js"></script>
     <link rel="stylesheet" href="./node_modules/emojionearea/dist/emojionearea.css">
+    <style>
+        .text-1{
+            border: 1px solid #ccc; 
+            padding: 20px;
+        }
+
+        .text-elem{
+            background: #889dca;
+            color: #fff;
+            padding: 5px;
+            margin: 2px;
+        }
+    </style>
 </head>
 <body>
-    <div contenteditable="true" id="text-1"></div>
+    <div contenteditable="true" id="text-1">
+         &nbsp;<span spellcheck="false" readonly contenteditable="false" class="text-elem">Hello Junaid</span>&nbsp; &nbsp;<span readonly contenteditable="false" class="text-elem">Howdy!!</span>&nbsp;
+    </div>
 </body>
 <script type="text/javascript">
   $(document).ready(function() {
     $("#text-1").emojioneArea({
-        standalone: true,
+        standalone: false,
         pickerPosition: "bottom",
-        saveEmojisAs: 'unicode'
+        saveEmojisAs: 'unicode',
+        container: '#text-1'
     });
+    $(".text-1").on("click", ".text-elem", function () {
+          console.log($(this).index());
+      });
   });
 </script>
 </html>
