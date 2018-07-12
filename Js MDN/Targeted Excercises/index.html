@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    window.onload = stringOp
+
+    var tagActions = [
+        {title: 'FirstName', item : 'firstname', format: "%firstname{fallback}%", label : "First Name"},
+        {title: 'LastName', item : 'lastname', format: "%lastname{fallback}%", label : "Last Name"},
+        {title: 'PageName', item : 'pagename', format: "%pagename{fallback}%", label : "Page Name"},
+        {title: 'ItemName', item : 'event:view:item', format: "%event:view:item{fallback}%", label : "Last Viewed Item Name"},
+        {title: 'ItemDesc', item : 'event:view:desc', format: "%event:view:desc{fallback}%", label : "Last Viewed Item Desc"},
+        {title: 'ItemURL', item : 'event:view:url', format: "%event:view:url{fallback}%", label : "Last Viewed Item URL"},
+        {title: 'ItemImage', item : 'event:view:img', format: "%event:view:img{fallback}%", label : "Last Viewed Item Image"},
+        {title: 'AddToCartItemName', item : 'event:addtocart:item', format: "%event:addtocart:item{fallback}%",
+            label : "Last Added To Cart Item Name"},
+        {title: 'AddToCartItemDesc', item : 'event:addtocart:desc', format: "%event:addtocart:desc{fallback}%",
+            label : "Last Added To Cart Item Desc"},
+        {title: 'AddToCartItemURL', item : 'event:addtocart:url', format: "%event:addtocart:url{fallback}%", label : "Last Added To Cart Item URL"},
+        {title: 'AddToCartItemImage', item : 'event:addtocart:img', format: "%event:addtocart:img{fallback}%", label : "Last Added To Cart Item Image"},
+    ]
+
+    var sample_str = '%firstname% %lastname% %event:view:item% %event:view:img% %event:addtocart:desc% %event:addtocart:item% %event:view:img:event hi event% %firstname:junaid% %event:addtocart:img% %event:view:url% %event:view:item% %event:view:item% %firstname% %event:addtocart:img% %event:view:url% %pagename% %firstname% %event:addtocart:item%'
+
+    var matchesArr = [];
+
+    function stringOp() {
+        for(let i = 0; i < tagActions.length; i++) {
+            matchesArr.push(sample_str.match(tagActions[i].format))
+        }
+        console.log(matchesArr);
+    }
+</script>
+</body>
+</html>
