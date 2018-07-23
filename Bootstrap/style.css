@@ -1,0 +1,20 @@
+.bg-1 {
+    background: url(Without\ color\ 2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 21.8em;
+    padding: 0;
+    position: relative;
+    z-index: 100000;
+}
+
+.bg-2 {
+    background: url(pexels-photo-886470.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 19em;
+    position: absolute;
+    background-position-x: 0;
+    padding: 0;
+    right: 0px;
+}
