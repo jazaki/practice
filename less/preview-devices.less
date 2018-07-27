@@ -1,0 +1,510 @@
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.marvel-device{
+  display: inline-block;
+  position: relative;
+  box-sizing: content-box !important;
+  .screen {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    z-index: 2;
+    background: white;
+    overflow: hidden;
+    display: block;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(48,50,51,.1);
+    .bar{
+      position: absolute;
+    }
+    .top{
+      background: #f7f7f8;
+      border-bottom: 1px solid #c8c7cc;
+      z-index: 10;
+      position: relative
+    }
+    .wrapper, .side-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center
+    }
+    .side-content{
+      line-height: 40px;
+      height: 40px;
+      text-decoration: none;
+      position: relative;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      transition-duration: .3s;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      color: #007aff;
+      font-size: 15px;
+      .ti-angle-left:before{
+        font-weight: bolder;
+        font-size: 20px;
+      }
+    }
+    .side-content:active,.side-content:focus,.side-content:hover {
+      color: #007aff
+    }
+    .wrapper {
+      padding: 0 8px;
+      box-sizing: border-box;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between
+    }
+    .back{
+      margin-left: 7px;
+    }
+    .fbpage-header {
+      text-align: center;
+      font-size: 11px;
+      padding: 0 10px;
+      width: calc(~"100% - 115px");
+      i{
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        color: #949494;
+        font-size: 17px
+      }
+    }
+    .fbpage-inner {
+      margin: auto;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      .page-inner{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+    .fbpage-inner .content-inner{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center
+    }
+    .fbpagename{
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+    .fbdesc{
+      color: #b5b5b5;
+      line-height: 12px
+    }
+    .desctxt{
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      white-space: nowrap
+    }
+
+  }
+
+  .top-bar, .bottom-bar {
+    height: 3px;
+    background: black;
+    width: 100%;
+    display: block;
+  }
+
+  .middle-bar {
+    width: 3px;
+    height: 4px;
+    top: 0px;
+    left: 90px;
+    background: black;
+    position: absolute;
+  }
+
+  &.iphone8{
+    width: 285px;
+    height: 450px;
+    padding: 85px 18px;
+    background: #f6f6f6;
+    border-radius: 50px;
+    box-shadow:inset 0px 0px 0px 3px #ededed;
+
+    &:before{
+      content: '';
+      width: calc(~"100% + 10px");
+      height: 2%;
+      position: absolute;
+      z-index: 1;
+      bottom: -1%;
+      opacity: 0.5;
+      left: -5px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 67%,rgba(0,0,0,0) 100%);
+    }
+
+    &:after{
+      width: calc(~"100% - 16px");
+      height: calc(~"100% - 16px");
+      position: absolute;
+      top: 8px;
+      content: '';
+      left: 8px;
+      border-radius: 48px;
+      box-shadow:inset 0 0 3px 0 rgba(0, 0, 0, 0.1),
+      inset 0 0 6px 3px #FFFFFF;
+      z-index: 1;
+    }
+
+    .home {
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 50%;
+      margin-left: -25px;
+      bottom: 20px;
+      z-index: 3;
+      background: rgb(48,50,51);
+      background: linear-gradient(135deg, rgba(48,50,51,1) 0%,rgba(181,183,185,1) 50%,rgba(240,242,242,1) 69%,rgba(48,50,51,1) 100%);
+
+      &:before{
+        background: #f8f8f8;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        width: calc(~"100% - 6px");
+        height: calc(~"100% - 6px");
+        top: 2.5px;
+        left: 3px;
+		box-shadow: 5px 5px 60px 15px #f6f6f6;
+      }
+    }
+
+    .top-bar{
+      height: 10px;
+      background: transparent;
+      position: absolute;
+      top: 58px;
+      left: 0;
+    }
+
+    .bottom-bar{
+      height: 14px;
+      background: transparent;
+      position: absolute;
+      bottom: 68px;
+      left: 0;
+    }
+
+    .sleep{
+      position: absolute;
+      top: 190px;
+      right: -4px;
+      width: 4px;
+      height: 66px;
+      border-radius: 0px 2px 2px 0px;
+      background: #dedfdf;
+	  box-shadow: 1px 2px 1px #b3b4b4 inset;
+    }
+
+    .volume{
+      position: absolute;
+      left: -4px;
+      top: 188px;
+      z-index: 0;
+      height: 66px;
+      width: 4px;
+      border-radius: 2px 0px 0px 2px;
+      background: #dedfdf;
+	  box-shadow: 1px 2px 1px #b3b4b4 inset;
+
+      &:before {
+        position: absolute;
+        left: 2px;
+        top: -78px;
+        height: 40px;
+        width: 2px;
+        border-radius: 2px 0px 0px 2px;
+        background: inherit;
+        content: '';
+        display: block;
+		box-shadow: 1px 0px #b3b4b4 inset;
+      }
+
+      &:after {
+        position: absolute;
+        left: 0px;
+        top: 82px;
+        height: 66px;
+        width: 4px;
+        border-radius: 2px 0px 0px 2px;
+        background: inherit;
+        content: '';
+        display: block;
+		box-shadow: 1px 2px 1px #b3b4b4 inset;
+      }
+    }
+
+    .camera {
+      background: #dedfdf;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      margin-left: -6px;
+      border-radius: 100%;
+      z-index: 3;
+    }
+
+    .sensor {
+      background: #dedfdf;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      top: 40px;
+      left: 110px;
+      z-index: 3;
+      border-radius: 100%;
+	  box-shadow: 0px 0px 1px 3px #b3b4b4 inset;
+    }
+
+    .speaker {
+      background: #dedfdf;
+      width: 50px;
+      height: 4px;
+      position: absolute;
+      top: 44px;
+      left: 50%;
+      margin-left: -25px;
+      border-radius: 5px;
+      z-index: 3;
+	  box-shadow: 1px 1px 2px #b3b4b4 inset;
+    }
+
+    &.gold{
+      background: #f9e7d3;
+
+      .top-bar, .bottom-bar{
+        background: white;
+      }
+
+      .sleep, .volume{
+        background: #f9e7d3;
+      }
+
+      .home{
+        background: rgb(206,187,169);
+        background: linear-gradient(135deg, rgba(206,187,169,1) 0%,rgba(249,231,211,1) 50%,rgba(206,187,169,1) 100%);
+      }
+    }
+
+    &.black{
+      background: #464646;
+      box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.7);
+
+      &:before{
+        background: #080808;
+      }
+
+      &:after{
+        box-shadow:
+                inset 0 0 3px 0 rgba(0, 0, 0, 0.1),
+                inset 0 0 6px 3px #212121;
+      }
+
+      .top-bar, .bottom-bar{
+        background: #212121;
+      }
+
+      .volume, .sleep{
+        background: #464646;
+      }
+
+      .camera{
+        background: #dedfdf;
+      }
+
+      .home{
+        background: rgb(8,8,8);
+        background: linear-gradient(135deg, rgba(8,8,8,1) 0%,rgba(70,70,70,1) 50%,rgba(8,8,8,1) 100%);
+
+        &:before{
+          background: #080808;
+        }
+      }
+
+    }
+
+    &.landscape{
+      padding: 24px 105px;
+      height: 375px;
+      width: 667px;
+
+      .sleep{
+        top: 100%;
+        border-radius: 0px 0px 2px 2px;
+        right: 190px;
+        height: 4px;
+        width: 66px;
+      }
+
+      .volume {
+        width: 66px;
+        height: 4px;
+        top: -4px;
+        left: calc(~"100% - 188px - 66px");
+        border-radius: 2px 2px 0px 0px;
+
+        &:before {
+          width: 40px;
+          height: 2px;
+          top: 2px;
+          right: -78px;
+          left: auto;
+          border-radius: 2px 2px 0px 0px;
+        }
+
+        &:after{
+          left: -82px;
+          width: 66px;
+          height: 4px;
+          top: 0;
+          border-radius: 2px 2px 0px 0px;
+        }
+      }
+
+      .top-bar{
+        width: 14px;
+        height: 100%;
+        left: calc(~"100% - 68px -  14px");
+        top: 0;
+      }
+
+      .bottom-bar{
+        width: 10px;
+        height: 100%;
+        left: 58px;
+        top: 0;
+      }
+
+      .home{
+        top: 50%;
+        margin-top: -34px;
+        margin-left: 0;
+        left: 22px;
+      }
+
+      .sensor {
+        top: 134px;
+        left: calc(~"100% - 49px - 16px");
+      }
+
+      .speaker {
+        height: 70px;
+        width: 6px;
+        left: calc(~"100% - 54px - 6px");
+        top: 50%;
+        margin-left: 0px;
+        margin-top: -35px;
+      }
+
+      .camera {
+        left: calc(~"100% - 32px");
+        top: 50%;
+        margin-left: 0px;
+        margin-top: -5px;
+      }
+    }
+  }
+}
+.marvel-device:before {
+  content: '';
+  width: calc(~"100% + 10px");
+  height: 2%;
+  position: absolute;
+  z-index: 1;
+  bottom: -1%;
+  opacity: 0.5;
+  left: -5px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 67%,rgba(0,0,0,0) 100%);
+}
+
+#screen-wrapper {
+    background: #fff;
+    height: 100%;
+    overflow: hidden;
+}
+.messenger {
+		font-size: 15px
+	}
+
+	.messenger__msg {
+		font-size: 15px;
+		padding: 10px;
+		border-radius: 14px;
+		background: rgba(224,230,237,.5);
+		clear: both;
+		max-width: 80%;
+		margin-top: 5px;
+		margin-left: 5px;
+		margin-right: 5px
+	}
+
+	.messenger__msg.img {
+		padding: 0
+	}
+
+	.messenger__msg.in {
+		float: left;
+		text-align: left
+	}
+
+	.messenger__msg.out {
+		background: #0084ff;
+		color: #fff;
+		float: right;
+		text-align: right
+	}
+
+	.messenger__msg.in+.messenger__msg.out {
+		margin-top: 20px;
+		margin-bottom: 20px
+	}
+
+	.messenger__msg.msg-hidden {
+		visibility: hidden
+	}
+
+	.messenger__msg>img {
+		max-width: 200px;
+		display: block;
+		border-radius: 14px
+	}
+
+	.messenger__msg.in>.messenger__link {
+		color: #0084ff
+	}
