@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emoji One Picker</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./node_modules/emojionearea/dist/emojionearea.js"></script>
+    <link rel="stylesheet" href="./node_modules/emojionearea/dist/emojionearea.css">
+    <style>
+        .text-1 {
+            border: 1px solid #ccc; 
+            padding: 20px;
+        }
+
+        .popup {
+            color: #000;
+            background: cyan;
+        }
+
+        .text-elem {
+            background: #889dca;
+            color: #fff;
+            padding: 5px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bada-baap">
+        <div class="baap-div">
+            <div contenteditable="true" class="text-1">
+                <span spellcheck="false" readonly contenteditable="false" class="text-elem">
+                    Hello Junaid <span class="popup">popup 1</span>
+                </span>
+                &nbsp;
+                <span readonly contenteditable="false" class="text-elem">
+                    Howdy!! <span class="popup">popup 2</span>
+                </span>
+                &nbsp;
+                <span readonly contenteditable="false" class="text-elem">
+                    Howdy!! <span class="popup">popup 3</span>
+                </span>
+                &nbsp;
+            </div>
+
+
+            <div contenteditable="true" class="text-1">
+                <span spellcheck="false" readonly contenteditable="false" class="text-elem">
+                    Hello Junaid <span class="popup">popup 4</span>
+                </span>
+                &nbsp;
+                <span readonly contenteditable="false" class="text-elem">
+                    Howdy!! <span class="popup">popup 5</span>
+                </span>
+                &nbsp;
+            </div>
+
+            
+        </div>
+    </div>
+</body>
+<script src="popper.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.popup').hide();
+    $(".text-elem").on("click", function (e) {
+        let inner = $(this).index();
+        let outer = $(this).parents(".text-1").index();
+        let out_elem = $(".bada-baap .text-1");
+        let in_ref = $(out_elem[outer]).find(".text-elem")
+        let in_popup = $(out_elem[outer]).find(".popup")
+        let ref = in_ref[inner];
+        let popup = in_popup[inner];
+        var popper = new Popper(ref, popup, {
+            placement: 'top'
+        })
+        $(popup).toggle();
+    });
+  });
+</script>
+</html>
