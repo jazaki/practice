@@ -1,0 +1,27 @@
+{
+  "name": "gruntdemo",
+  "version": "0.0.0",
+  "description": "Demonstration of Grunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-less": "~0.11.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-uglify": "~0.4.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "fullpage.js": "^2.9.5",
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
+    "nouislider": "^10.1.0",
+    "odometer": "^0.4.8"
+  }
+}
