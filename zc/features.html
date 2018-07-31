@@ -1,254 +1,592 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>ZoConvert Features</title>
-      <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="css/vendor.min.css" />
-      <link rel="stylesheet" type="text/css" href="css/shopifyapp.min.css" />
-      <link rel="stylesheet" href="css/features.min.css">
-      <style>
-         #key-features.section{
-             padding: 0;
-         }
-         h3.center-header {
-             font-size: 20px;
-         }
-         .inner-sections  h1{
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/vendor.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/shopifyapp.min.css" />
+    <link rel="stylesheet" href="css/features.min.css">
+    <link rel="stylesheet" href="css/gifplayer.css">
+    <style>
+        #key-features.section {
+            padding: 0;
+        }
+
+        h3.center-header {
+            font-size: 20px;
+        }
+
+        .inner-sections h1 {
             color: #ccc;
             font-weight: 600;
-         }
-      </style>
-   </head>
-   <body>
-      <div id="header">
-         <nav class="navbar navbar-default">
+        }
+
+        #slide-head {
+            font-size: 4.5em;
+            font-family: 'Open Sans', sans-serif;
+            color: #081b40;
+            letter-spacing: 1px;
+        }
+
+        hr.horizon-ruler {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 132, 255, 0.75), rgba(0, 0, 0, 0));
+        }
+
+        .gifplayer-wrapper {
+            display: flex;
+            height: 100%;
+        }
+
+        .gp-gif-element {
+            height: 100%;
+        }
+
+        .gif-container {
+            height: 80%;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center
+        }
+
+        .feat-selector {
+            cursor: pointer;
+            height: 12em;
+            display: flex;
+            padding-top: 25px;
+            justify-content: center;
+            align-items: center;
+            padding-right: 8px;
+            padding-bottom: 25px;
+            padding-left: 8px;
+        }
+
+        .feat-selector.active {
+            border: 1.5px solid #0084ff;
+        }
+
+        .feat-content {
+            padding: 20px;
+            background: #ecf0f3;
+            height: 11em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .feat-arrow {
+            position: absolute;
+            bottom: -45px;
+            font-size: 5em;
+            font-weight: 400;
+        }
+
+        .feat-selector h2 {
+            font-size: 21px;
+            color: #0084ff;
+            line-height: 1.5;
+        }
+
+        .auto-heads {
+            text-align: left;
+            padding-top: 2em;
+        }
+
+        @media only screen and (max-width: 767px) {
+            body #section0 {
+                height: 40em;
+            }
+
+            [class*=col-] img {
+                max-height: 150px;
+                margin: 10px auto;
+                display: block;
+            }
+            .main-heading {
+                font-size: 40px;
+                margin-top: 32px;
+            }
+
+            .main-subheading {
+                text-align: center;
+                font-size: 25px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #slide-head {
+                margin-left: 35px;
+            }
+            .slide-text-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            #gif-parent {
+                display: flex;
+                justify-content: center;
+            }
+            .gif-parent-container {
+                margin: 0 5em;
+            }
+            .feat-selector {
+                margin: 0 4em;
+            }
+            .result-div {
+                display: flex;
+                align-items: center;
+                padding-bottom: 20px;
+            }
+            .result-img {
+                width: 80%;
+            }
+        }
+
+        .gif-parent-container {
+            height: 35em;
+        }
+
+        #slide-points {
+            text-align: left;
+            font-size: 20px;
+            font-family: 'Open Sans', sans-serif;
+            color: #081b40;
+            letter-spacing: 1px;
+            line-height: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
-               <div class="navbar-header">
-                  <a href="https://goo.gl/bnP4vh" class="navbar-brand logo"></a>
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  </button>
-               </div>
-               <div class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav navbar-right">
-                     <li><a href="https://goo.gl/PxkHJk">Pricing</a>
-                     </li>
-                     <li><a href="https://goo.gl/PxkHJk">Affiliate Program</a>
-                     </li>
-                     <li><a href="https://goo.gl/FWg2wJ">Sign in with Facebook</a>
-                     </li>
-                  </ul>
-               </div>
+                <div class="navbar-header">
+                    <a href="https://goo.gl/bnP4vh" class="navbar-brand logo"></a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="https://goo.gl/PxkHJk">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="https://goo.gl/PxkHJk">Affiliate Program</a>
+                        </li>
+                        <li>
+                            <a href="https://goo.gl/FWg2wJ">Sign in with Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://blog.zoconvert.com/">Blog</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-         </nav>
-      </div>
-      <div id="fullpage">
-         <div class="section flex-parent flex-vertical-align-center flex-sm-collapse" id="section0">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-               <h1>
-                  WE KNEW YOU’D ARRIVE!
-               </h1>
-               <h2>
-                  Check out our awesome features.
-               </h2>
+        </nav>
+    </div>
+    <div id="fullpage">
+        <div class="section flex-parent flex-vertical-align-center flex-sm-collapse" id="section0">
+            <div class="col-lg-6 col-sm-12 col-xs-12 col-md-6 col-sm-12 col-xs-12">
+                <h1 class="main-heading">
+                    WE KNEW YOU’D ARRIVE!
+                </h1>
+                <h2 class="main-subheading">
+                    Check out our awesome features.
+                </h2>
             </div>
-         </div>
-         <div class="section" id="key-features">
+        </div>
+        <div class="section" id="key-features">
             <h3 class="center-header">KEY FEATURES</h3>
             <div class="row inner-sections">
-            </div>
-         </div>
-         <div class="section" id="key-features">
-            <div class="row inner-sections">
-               <div class="col-lg-12">
-                  <h1>GROWING SUSBCRIBERS</h1>
-               </div>
-            </div>
-            <div class="row inner-sections" style="display: flex; justify-content: center; margin-top: 3em">
-               <div class="col-lg-2 col-sm-12 col-xs-12" style="height: 35em; margin: 0 8em">
-                  <div style="border: 1px solid; height: 80%"></div>
-                  <div>
-                     <h2 style="font-family: 'Open Sans',sans-serif; font-size: 18px">Get opt ins from your website</h2>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-sm-12 col-xs-12" style="height: 35em; margin: 0 8em">
-                  <div style="border: 1px solid; height: 80%"></div>
-                  <div>
-                     <h2 style="font-family: 'Open Sans',sans-serif; font-size: 18px">Convert your FB fans into subscribers</h2>
-                  </div>
-               </div>
-               <div class="col-lg-2 col-sm-12 col-xs-12" style="height: 35em; margin: 0 8em">
-                  <div style="border: 1px solid; height: 80%"></div>
-                  <div>
-                     <h2 style="font-family: 'Open Sans',sans-serif; font-size: 18px">Customer Chat plugins</h2>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="section" id="faq">
-            <div class="row inner-sections">
-               <div class="col-lg-12">
-                  <h1>RESULTS</h1>
-               </div>
-            </div>
-            <div class="row inner-sections">
-               <div class="container">
-                  <div class="row">
-                     <div class="col-lg-6">
-                        <div class="row" style="display: flex; align-items: center;">
-                           <div class="col-lg-6">
-                              <img src="./img/feature/open-rates.png" style="width: 80%" alt="">
-                           </div>
-                           <div class="col-lg-6 text-left">
-                              <div class="row">
-                                 <div class="col-lg-12">
-                                    <h1 style="font-size: 5em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
-                                       80<span style="font-size: 52px">%</span>
-                                    </h1>
-                                 </div>
-                                 <div class="col-lg-12">
-                                    <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
-                                       Open Rates
-                                    </h1>
-                                 </div>
-                              </div>
-                           </div>
+                <div class="col-lg-12">
+                    <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap;">
+                        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 feat-selector active" onclick="showHide(0)">
+                            <div class="feat-content">
+                                <h2>
+                                    GROWING SUBSCRIBERS
+                                </h2>
+                            </div>
+                            <img src="./img/arrow.svg" alt="" class="feat-arrow">
                         </div>
-                     </div>
-                     <div class="col-lg-6">
-                        <div class="row" style="display: flex; align-items: center;">
-                           <div class="col-lg-6">
-                              <img src="./img/feature/ctr.png" style="width: 80%" alt="">
-                           </div>
-                           <div class="col-lg-6 text-left">
-                              <div class="row">
-                                 <div class="col-lg-12">
-                                    <h1 style="font-size: 5em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
-                                       55<span style="font-size: 52px">%</span>
-                                    </h1>
-                                 </div>
-                                 <div class="col-lg-12">
-                                    <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
-                                       CTR
-                                    </h1>
-                                 </div>
-                              </div>
-                           </div>
+                        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 feat-selector" onclick="showHide(1)">
+                            <div class="feat-content">
+                                <h2>AUTOMATED PERSONALIZED MESSAGES</h2>
+                                <img src="./img/arrow.svg" alt="" style="display: none;" class="feat-arrow">
+                                <!-- <i class="material-icons feat-arrow">
+                                    keyboard_arrow_down
+                                </i> -->
+                            </div>
                         </div>
-                     </div>
-                  </div>
-                  <div class="row" style="margin-top: 6em">
-                     <div class="col-lg-6">
-                        <div class="row" style="display: flex; align-items: center;">
-                           <div class="col-lg-6">
-                              <img src="./img/feature/high-optin-rate.png" style="width: 80%" alt="">
-                           </div>
-                           <div class="col-lg-6 text-left">
-                              <div class="row">
-                                 <div class="col-lg-12">
-                                    <h1 style="font-size: 5em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
-                                       38<span style="font-size: 52px">%</span>
-                                    </h1>
-                                 </div>
-                                 <div class="col-lg-12">
-                                    <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
-                                       Higher Optin Rates
-                                    </h1>
-                                 </div>
-                              </div>
-                           </div>
+                        <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 feat-selector" onclick="showHide(2)">
+                            <div class="feat-content">
+                                <h2>REPORTS ON CAMPAIGN PERFORMANCE</h2>
+                                <img src="./img/arrow.svg" alt="" style="display: none;" class="feat-arrow">
+                            </div>
                         </div>
-                     </div>
-                     <div class="col-lg-6">
-                        <div class="row" style="display: flex; align-items: center;">
-                           <div class="col-lg-6">
-                              <img src="./img/feature/open-rates.png" style="width: 80%" alt="">
-                           </div>
-                           <div class="col-lg-6 text-left">
-                              <div class="row">
-                                 <div class="col-lg-12">
-                                    <h1 style="font-size: 5em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
-                                       7.2<span style="font-size: 52px">%</span>
-                                    </h1>
-                                 </div>
-                                 <div class="col-lg-12">
-                                    <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
-                                       Average ROI
-                                    </h1>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="section" id="cases">
-            <div class="row inner-sections">
-               <div class="col-lg-12">
-                  <h1>USE CASES</h1>
-               </div>
-            </div>
-            <div class="row inner-sections">
-                <div class="col-lg-4">
-                    <img style="width: 100%" src="http://placehold.it/256.png" alt="">
+                    </div>
+                    <!-- <hr class="horizon-ruler"> -->
                 </div>
-                <div class="col-lg-8">
-                    <div class="row">
-                        <div class="col-lg-12" id="slide-text">
+                </d12v>
+            </div>
+            <div class="section feat-section" id="key-features">
+                <div class="row inner-sections">
+                    <div class="col-lg-12">
+                        <h1>GROWING SUSBCRIBERS</h1>
+                    </div>
+                </div>
+                <div class="row inner-sections" style="margin-top: 3em" id="gif-parent">
+                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 gif-parent-container">
+                        <div class="gif-container">
+                            <img class="gif" data-wait="true" src="http://rubentd.com/img/banana.png" />
+                        </div>
+                        <div>
+                            <h2 style="font-family: 'Open Sans',sans-serif; font-size: 18px">Get opt ins from your website</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 gif-parent-container">
+                        <div class="gif-container">
+                            <img class="gif" data-wait="true" src="http://rubentd.com/img/banana.png" />
+                        </div>
+                        <div>
+                            <h2 style="font-family: 'Open Sans',sans-serif; font-size: 18px">Convert your FB fans into subscribers</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 gif-parent-container">
+                        <div class="gif-container">
+                            <img class="gif" data-wait="true" src="http://rubentd.com/img/banana.png" />
+                        </div>
+                        <div>
+                            <h2 style="font-family: 'Open Sans',sans-serif; font-size: 18px">Customer Chat plugins</h2>
                         </div>
                     </div>
                 </div>
             </div>
-         </div>
-         <div class="footer-links">
-            <span>© 2018 ZoConvert. All rights reserved </span>
-            <a href="https://goo.gl/mLq3dR"> Terms of Service </a> | <a href="hhttps://goo.gl/ZdajkN"> Privacy Policy </a>
-         </div>
-      </div>
-      <script type="text/javascript" src="js/vendor.min.js"></script>
-      <script type="text/javascript" src="js/shopifyapp.min.js"></script>
-      <script type="text/javascript" src="js/pricing.min.js"></script>
-      <script>
-          let slidesData = [
-              {
-                  title: 'Slide 1',
-                  description: 'Lorem Ipsum Dolor',
-                  image: ''
-              },
-              {
-                  title: 'Slide 2',
-                  description: 'Sit Amet Consectetur',
-                  image: ''
-              },
-              {
-                  title: 'Slide 3',
-                  description: 'Adipiscing Elit',
-                  image: ''
-              },
-              {
-                  title: 'Slide 4',
-                  description: 'Delparro Urna',
-                  image: ''
-              },
-          ];
+            <div class="section feat-section" id="key-features" style="display: none;">
+                <div class="row inner-sections">
+                    <div class="col-lg-12" style="margin-bottom: 4em;">
+                        <h1>AUTOMATED PERSONALIZED MESSAGES</h1>
+                    </div>
+                    <div class="col-lg-2 auto-heads col-lg-offset-3" style="background: url(./img/earth.png);background-size: cover; height: 20em;">
+                        <h3 style="font-size: 20px; font-family: 'Open Sans',sans-serif;">According to</h3>
+                        <h2 style="margin:0; font-size: 25px;font-family: 'Open Sans',sans-serif; color: #000;">Time Zones</h2>
+                    </div>
+                    <div class="col-lg-3 auto-heads">
+                        <h3 style="font-size: 20px; font-family: 'Open Sans',sans-serif;">According to</h3>
+                        <h2 style="margin:0; font-size: 25px;font-family: 'Open Sans',sans-serif; color: #000;">Audience’s Interest</h2>
+                    </div>
+                    <div class="col-lg-3 auto-heads">
+                        <h3 style="font-size: 20px; font-family: 'Open Sans',sans-serif;">According to</h3>
+                        <h2 style="margin:0; font-size: 25px;font-family: 'Open Sans',sans-serif; color: #000;">User’s Activity</h2>
+                    </div>
+                </div>
+                <div class="row inner-section" style="margin: 4em 0; display: flex; align-items: center;">
+                    <div class="col-lg-4 col-lg-offset-2" style="text-align: left;">
+                        <h2 style="font-size: 25px; margin-bottom: 10px; font-family: 'Open Sans',sans-serif;">Use images, texts, and buttons.</h2>
+                        <h1 style="font-size: 2.5em; color: #000; font-family: 'Open Sans',sans-serif;">Create a conversational flow.</h1>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="./img/section-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="section feat-section" id="key-features" style="display: none;">
+                <div class="row inner-sections">
+                    <div class="col-lg-12">
+                        <h1>REPORTS ON CAMPAIGN PERFORMANCE</h1>
+                    </div>
+                </div>
+                <div class="row inner-section" style="margin: 4em 0; display: flex; align-items: center;">
+                    <div class="col-lg-4 col-lg-offset-2" style="text-align: left;">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2 style="font-size: 25px; margin-bottom: 10px; font-family: 'Open Sans',sans-serif;">See Your</h2>
+                                <h1 style="font-size: 2.5em; color: #000; font-family: 'Open Sans',sans-serif;">subscribers grow</h1>
+                            </div>
+                            <div class="col-lg-12" style="margin-top: 4em;">
+                                <h2 style="font-size: 25px; margin-bottom: 10px; font-family: 'Open Sans',sans-serif;">Measure</h2>
+                                <h1 style="font-size: 2.5em; color: #000; font-family: 'Open Sans',sans-serif;">Campaign Success</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="./img/section-3.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="faq">
+                <div class="row inner-sections">
+                    <div class="col-lg-12">
+                        <h1>RESULTS</h1>
+                    </div>
+                </div>
+                <div class="row inner-sections">
+                    <div class="container">
+                        <div class="row">
+                            <div style="padding-top: 4em;" class="col-lg-6 col-sm-12 col-xs-12">
+                                <div class="row result-div">
+                                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                                        <img class="result-img" src="./img/feature/open-rates.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 col-xs-12 text-left">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h1 style="font-size: 4em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
+                                                    80
+                                                    <span style="font-size: 52px">%</span>
+                                                </h1>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
+                                                    Open Rates
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-top: 4em;" class="col-lg-6 col-sm-12 col-xs-12">
+                                <div class="row result-div">
+                                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                                        <img class="result-img" src="./img/feature/ctr.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 col-xs-12 text-left">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h1 style="font-size: 4em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
+                                                    55
+                                                    <span style="font-size: 52px">%</span>
+                                                </h1>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
+                                                    CTR
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="padding-top: 4em;" class="col-lg-6 col-sm-12 col-xs-12">
+                                <div class="row result-div">
+                                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                                        <img class="result-img" src="./img/feature/high-optin-rate.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 col-xs-12 text-left">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h1 style="font-size: 4em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
+                                                    38
+                                                    <span style="font-size: 52px">%</span>
+                                                </h1>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
+                                                    Higher Optin Rates
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding-top: 4em;" class="col-lg-6 col-sm-12 col-xs-12">
+                                <div class="row result-div">
+                                    <div class="col-lg-6 col-sm-12 col-xs-12">
+                                        <img class="result-img" src="./img/feature/avg-roi.png" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col-sm-12 col-xs-12 text-left">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <h1 style="font-size: 4em;font-family: 'Open Sans',sans-serif; font-weight: 400;">
+                                                    7.2
+                                                    <span style="font-size: 52px">%</span>
+                                                </h1>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <h1 style="font-family: 'Open Sans',sans-serif; font-weight: 400; font-size: 2em;">
+                                                    Average ROI
+                                                </h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="cases">
+                <div class="row inner-sections">
+                    <div class="col-lg-12">
+                        <h1>USE CASES</h1>
+                    </div>
+                </div>
+                <div class="row inner-sections" style="overflow: hidden; height: 400px; margin-top: 5em;">
+                    <div class="col-lg-5" id="img-container">
+                        <img style="width: 100%; padding: 20px; height: 400px;" class="slide-img" src="" alt="">
+                        <img style="width: 100%; padding: 20px; height: 400px;" class="slide-img" src="" alt="">
+                        <img style="width: 100%; padding: 20px; height: 400px;" class="slide-img" src="" alt="">
+                        <img style="width: 100%; padding: 20px; height: 400px;" class="slide-img" src="" alt="">
+                    </div>
+                    <div class="col-lg-7 slide-text-container">
+                        <div class="row">
+                            <div class="col-lg-12" id="slide-text">
+                                <div class="row">
+                                    <div class="col-lg-12 text-left">
+                                        <h1 id="slide-head"></h1>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <ul type="circle" id="slide-points">
+                                            <!--                                         <li>Send out cart recovery, browse abandonment campaigns</li>
+                                            <li>Promote New Arrivals, Trending Items
+                                            <li>Sale/Price Drop Announcement</li>
+                                            <li>Share Order Status, collect feedbacks</li>
+                                            <li>Convert fans into lifetime subscribers</li> -->
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links">
+                <span>© 2018 ZoConvert. All rights reserved </span>
+                <a href="https://goo.gl/mLq3dR"> Terms of Service </a> |
+                <a href="hhttps://goo.gl/ZdajkN"> Privacy Policy </a>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/vendor.min.js"></script>
+        <script type="text/javascript" src="js/shopifyapp.min.js"></script>
+        <script type="text/javascript" src="js/pricing.min.js"></script>
+        <script src="js/jquery.gifplayer.js"></script>
+        <script>
+            let slidesData = [
+                {
+                    title: 'E- commerce',
+                    description: [
+                        "Send out cart recovery, browse abandonment campaigns",
+                        "Promote New Arrivals, Trending Items",
+                        "Sale/Price Drop Announcement",
+                        "Share Order Status, collect feedbacks",
+                        "Convert fans into lifetime subscribers"
+                    ],
+                    imageUrl: './img/ecommerce.png'
+                },
+                {
+                    title: 'Banking and Financial Services',
+                    description: [
+                        "Generate, Qualify and Nurture more Leads via Messenger",
+                        "Solve Support Queries",
+                        "Promote New schemes",
+                        "Share status of applications, Terms and Conditions etc"
+                    ],
+                    imageUrl: './img/bank.png'
+                },
+                {
+                    title: 'Travel And Hospitality',
+                    description: [
+                        "Take bookings at dynamic prices directly via Messenger",
+                        "Share live status of booking, Invoices, Fare rules and other information",
+                        "Promote New Packages and offers",
+                        "Collect Feedbacks"
+                    ],
+                    imageUrl: './img/travel.png'
+                },
+                {
+                    title: 'News, Content and Entertainment',
+                    description: [
+                        "Segment users according to their interest areas",
+                        "Run Quizzes and Contests",
+                        "Promote latest and trending articles/videos",
+                        "Run Polls, Ask for opinions"
+                    ],
+                    imageUrl: './img/blog.png'
+                },
+            ];
+            let currFeatIndex = 0;
 
-          $(document).ready(function() {
-              for(let i=0; i< slidesData.length; i++) {
-                rotator(i);
-              }
-          })
+            $(document).ready(function () {
+                $('.gif').each(function (index) {
+                    $(this).gifplayer({
+                        gif: './img/gif/zcfbmAudienceBuilder.gif'
+                    });
+                })
+                let index = 0;
+                setText(index);
+                $(".slide-img").each(function (i) {
+                    $(this).attr("src", slidesData[i].imageUrl)
+                });
+                showHide(2);
+                setInterval(function () {
+                    index++;
+                    if (index >= slidesData.length) {
+                        index = 0;
+                    }
+                    rotate(index);
+                    // setImg(index);
+                }, 3000);
+            })
 
-          function rotator(i) {
-            $('#slide-text').html(`<h3>${slidesData[i].title}</h3>`)
-          }
-      </script>
-   </body>
+            /*           function setImg(i) {
+                          let height = 400 * i;
+                          $("#img-container").animate({
+                              bottom: `${height}px`
+                            });
+                      } */
+
+            function setText(i) {
+                $("#slide-points").empty();
+                slidesData[i].description.forEach(function (point) {
+                    $('#slide-points').append(`<li>${point}</li>`);
+                });
+
+                $("#slide-head").html(slidesData[i].title);
+            }
+
+            function rotate(i) {
+
+                let height = 400 * i;
+                $("#img-container").animate({
+                    bottom: `${height}px`
+                }, 2000,
+
+                    function () {
+                        $("#slide-text").fadeOut("slow", function () {
+                            setText(i);
+                            $(this).fadeIn("slow");
+                        });
+                    })
+            }
+
+            function showHide(param) {
+
+                if (currFeatIndex !== param) {
+                    $('.feat-selector').removeClass("active");
+                    $('.feat-arrow').hide();
+                    $('.feat-arrow').eq(param).show();
+                    $('.feat-selector').eq(param).addClass("active");
+                    $('.feat-section').eq(currFeatIndex).fadeOut("slow", function () {
+                        currFeatIndex = param;
+                        $('.feat-section').eq(param).fadeIn("slow");
+                    });
+                }
+            }
+
+        </script>
+</body>
+
 </html>
